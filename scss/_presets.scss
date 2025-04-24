@@ -1,0 +1,61 @@
+// Colors
+
+$white: hsl(0, 100%, 100%);
+$grey-900: hsl(217, 19%, 35%);
+$grey-500: hsl(214, 17%, 51%);
+$grey-400: hsl(212, 23%, 69%);
+$grey-200: hsl(210, 46%, 95%);
+
+// Typography
+
+@mixin _manrope {
+    font-family: "Manrope", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+@mixin _manrope-medium {
+    @include _manrope;
+    font-weight: 500;
+}
+
+@mixin _manrope-bold {
+    @include _manrope;
+    font-weight: 700;
+}
+
+@mixin text-preset-1 {
+    @include _manrope-bold;
+    font-size: 1.25rem;
+    line-height: 130%;
+    letter-spacing: 0.015625rem;
+}
+
+@mixin _text-preset-2 {
+    font-size: 0.8125rem;
+    line-height: 140%;
+    letter-spacing: 0.0012rem;
+}
+
+@mixin text-preset-2-medium {
+    @include _manrope-medium;
+    @include _text-preset-2;
+}
+
+@mixin text-preset-2-bold {
+    @include _manrope-bold;
+    @include _text-preset-2;
+}
+
+@mixin text-preset-3 {
+    @include _manrope-medium;
+    font-size: 0.8125rem;
+    line-height: 140%;
+    letter-spacing: 0.25rem;
+}
+
+// Spacing
+
+@function spacing($spacing-value) {
+    @return (1rem * ($spacing-value / 200));
+}

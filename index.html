@@ -1,36 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- displays site properly based on user's device -->
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Article preview component</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/index.css">
+    <script defer src="scripts/index.js"></script>
+    <title>Frontend Mentor | Article preview component</title>
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+        .attribution {
+            font-size: 11px;
+            text-align: center;
+        }
+
+        .attribution a {
+            color: hsl(228, 45%, 44%);
+        }
+    </style>
 </head>
+
 <body>
-
-  Shift the overall look and feel by adding these wonderful 
-  touches to furniture in your home
-
-  Ever been in a room and felt like something was missing? Perhaps 
-  it felt slightly bare and uninviting. I’ve got some simple tips 
-  to help you make any room feel complete.
-
-  Michelle Appleton
-  28 Jun 2020
-
-  Share
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
+    <main>
+        <article class="article-preview-component">
+            <img class="article-image" src="images/drawers.jpg" width="660" height="528" alt="decoritive objects on an end table with drawers" />
+            <div class="article-content">
+                <div class="article-text">
+                    <a href="#" class="article-heading">
+                        <h1>
+                            Shift the overall look and feel by adding these wonderful
+                            touches to furniture in your home
+                        </h1>
+                    </a>
+                    <p class="article-description">
+                        Ever been in a room and felt like something was missing? Perhaps
+                        it felt slightly bare and uninviting. I’ve got some simple tips
+                        to help you make any room feel complete.
+                    </p>
+                </div>
+                <div id="article-interactive" class="article-interactive">
+                    <div class="article-profile">
+                        <img class="article-avatar" src="images/avatar-michelle.jpg" width="175" height="175" alt="Michelle Appleton" />
+                        <address class="article-author">Michelle Appleton</address>
+                        <time class="article-post-date" datetime="2020-06-28">28 Jun 2020</time>
+                    </div>
+                    <div class="article-share">
+                        <p>SHARE</p>
+                        <ul>
+                            <li><a href="#"><img src="images/icon-facebook.svg" alt="Facebook" width="20" height="20" /></a></li>
+                            <li><a href="#"><img src="images/icon-twitter.svg" alt="Twitter" width="20" height="17" /></a></li>
+                            <li><a href="#"><img src="images/icon-pinterest.svg" alt="Pinterest" width="20" height="20" /></a></li>
+                        </ul>
+                    </div>
+                    <button id="share-button" class="article-share-button"></button>
+                </div>
+            </div>
+        </article>
+    </main>
+    <footer class="attribution">
+        Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+        Coded by <a href="#">Your Name Here</a>.
+    </footer>
 </body>
+
 </html>
