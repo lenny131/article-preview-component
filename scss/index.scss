@@ -154,6 +154,11 @@ main {
         align-items: center;
         gap: presets.spacing(200);
     }
+
+    img {
+        width: 1.25rem;
+        height: auto;
+    }
 }
 
 .article-share-tail {
@@ -170,6 +175,7 @@ main {
     background-color: presets.$grey-200;
     background-repeat: no-repeat;
     background-position: center;
+    background-size: 50%;
     width: 2rem;
     height: 2rem;
     border-radius: 50%;
@@ -180,7 +186,7 @@ main {
 }
 
 .attribution {
-    font-size: 11px;
+    font-size: 0.75rem;
     text-align: center;
 
     a {
@@ -217,5 +223,23 @@ main {
         padding-inline: presets.spacing(500);
         padding-block: presets.spacing(200);
         border-radius: 0.625rem;
+    }
+}
+
+@media (min-width: presets.$screen-size-desktop) {
+    .article-preview-component {
+        flex-direction: row;
+        width: 45.625rem;
+        height: 17.5rem;
+    }
+
+    .article-image {
+        width: 17.8125rem;
+        height: auto;
+    }
+
+    .article-content {
+        margin-block: presets.spacing(300);
+        margin-inline-end: presets.spacing(500);
     }
 }

@@ -165,6 +165,10 @@ main {
   align-items: center;
   gap: 1rem;
 }
+.article-share img {
+  width: 1.25rem;
+  height: auto;
+}
 
 .article-share-tail {
   background-color: hsl(217, 19%, 35%);
@@ -180,6 +184,7 @@ main {
   background-color: hsl(210, 46%, 95%);
   background-repeat: no-repeat;
   background-position: center;
+  background-size: 50%;
   width: 2rem;
   height: 2rem;
   border-radius: 50%;
@@ -189,14 +194,14 @@ main {
 }
 
 .attribution {
-  font-size: 11px;
+  font-size: 0.75rem;
   text-align: center;
 }
 .attribution a {
   color: hsl(228, 45%, 44%);
 }
 
-@media (min-width: 48rem) {
+@media (min-width: 48em) {
   .article-preview-component {
     flex-direction: row;
     width: 38rem;
@@ -220,6 +225,21 @@ main {
     padding-inline: 2.5rem;
     padding-block: 1rem;
     border-radius: 0.625rem;
+  }
+}
+@media (min-width: 90em) {
+  .article-preview-component {
+    flex-direction: row;
+    width: 45.625rem;
+    height: 17.5rem;
+  }
+  .article-image {
+    width: 17.8125rem;
+    height: auto;
+  }
+  .article-content {
+    margin-block: 1.5rem;
+    margin-inline-end: 2.5rem;
   }
 }
 

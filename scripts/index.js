@@ -1,13 +1,17 @@
 "use strict";
 
-let isSharing = false;
+let isSharing = false; // This is for the window resizing event performance.
 const shareButton = document.getElementById("share-button")
 const articleInteractive = document.getElementById("article-interactive");
 
 shareButton.addEventListener("click", function() {
-    if (window.matchMedia("(min-width: 48rem)").matches) {
+    // Mobile layout replaces author details with sharing controls.
+    // Other layouts display popup with sharing controls.
+    if (window.matchMedia("(min-width: 48em)").matches) {
+        // Tablet and Desktop layouts
         const popup = document.getElementById("share-popup");
         if (popup === null) {
+            // Popup is not currently open, so open new one.
             const newPopup = document.createElement("div");
             newPopup.id = "share-popup";
             newPopup.classList.add("article-share-popup");
@@ -23,6 +27,8 @@ shareButton.addEventListener("click", function() {
                 <div class="article-share-tail"></div>`;
             document.body.appendChild(newPopup);
 
+            // Get the current position of the share button.
+            // The sharing popup will be displayed above the share button.
             const shareButtonBounds = shareButton.getBoundingClientRect();
             const newPopupBounds = newPopup.getBoundingClientRect();
             newPopup.style.top = (window.scrollY + shareButtonBounds.top - newPopupBounds.height - 20) + "px";
@@ -31,19 +37,24 @@ shareButton.addEventListener("click", function() {
             isSharing = true;
         }
         else {
+            // Popup is already open, so close it.
             popup.remove();
             articleInteractive.removeAttribute("data-sharing-popup");
             isSharing = false;
         }
     }
     else {
+        // Mobile Layout
         articleInteractive.toggleAttribute("data-sharing");
         isSharing = articleInteractive.hasAttribute("data-sharing");
     }
 });
 
 window.addEventListener("resize", function() {
-    if (isSharing) {
+    // This event will be called for each increment of window resizing.
+    // For better performance, if sharing controls are not currently visible, then don't do anything.
+    // Easier to check boolean value than to search dom.
+    if (isSharing) { 
         articleInteractive.removeAttribute("data-sharing");
         articleInteractive.removeAttribute("data-sharing-popup");
         const popup = document.getElementById("share-popup");
